@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode", "LeetCode.csproj", "{596A8199-FAF8-44BE-A912-F8C2ABD455E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode", "LeetCode\LeetCode.csproj", "{596A8199-FAF8-44BE-A912-F8C2ABD455E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForGeeks", "..\GeeksForGeeks\GeeksForGeeks.csproj", "{A3106651-2680-4F31-AC12-6EFF5EA5E06E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksForGeeks", "\GeeksForGeeks\GeeksForGeeks.csproj", "{A3106651-2680-4F31-AC12-6EFF5EA5E06E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
