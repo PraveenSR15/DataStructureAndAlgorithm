@@ -11,6 +11,9 @@ public class Program
         PushZeros.PushZerosToEnd(arr2,arr2.Length);
         
         int[] arr3 = new int[] { 20, 17 };
-        EvenPositionedGreater.assign(arr3,arr3.Length);
+        var res = EvenPositionedGreater.assign(arr3,arr3.Length);
+        
+        foreach(var r in res)
+            Console.WriteLine(r);
     }
 }
