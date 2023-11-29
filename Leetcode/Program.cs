@@ -5,6 +5,7 @@ using LeetCode.LongestSubstring_STring_Loop;
 using LeetCode.Median_Array;
 using LeetCode.Palindrome_Integer_Condition;
 using LeetCode.RemoveDuplicates_Array_Loop;
+using LeetCode.RemoveElement_Array_loop;
 using LeetCode.Stairs_Integer_Fibonacci;
 using LeetCode.TwoSum_Array_Loop;
 using MultiplyStrings;
@@ -17,7 +18,7 @@ class program
 
         do
         {
-            Console.WriteLine("Choose the problem: \n 1. AddTwoNumbers \n 2.MultiplyTwoStrings \n 3.RemoveDuplicateNumbers \n 4.TwoSum \n 5.IndexOfString \n 6.Stairs \n 7.Palindrome \n 8.Median \n 9.LongestSubstring \n 10.LengthOfLastWord");
+            Console.WriteLine("Choose the problem: \n 1. AddTwoNumbers \n 2.MultiplyTwoStrings \n 3.RemoveDuplicateNumbers \n 4.TwoSum \n 5.IndexOfString \n 6.Stairs \n 7.Palindrome \n 8.Median \n 9.LongestSubstring \n 10.LengthOfLastWord \n 11.Remove Element");
             int choice = int.Parse(Console.ReadLine());
 
             switch (choice)
@@ -69,6 +70,10 @@ class program
                 case 10:
                     LengthOfLastWord length = new LengthOfLastWord();
                     Console.WriteLine(length.LengthOfLastWordSolution("   fly me   to   the moon  "));
+                    break;
+                case 11:
+                    RemoveArrayElement remove = new RemoveArrayElement();
+                    remove.RemoveElement(new int[] { 4, 5 }, 4);
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");
