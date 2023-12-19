@@ -8,10 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Lists\" />
     <Folder Include="Hash\" />
+    <Folder Include="StackAndQueue\" />
     <Folder Include="String\" />
     <Folder Include="Trees\" />
   </ItemGroup>
-
 </Project>
