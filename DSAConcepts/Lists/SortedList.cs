@@ -42,14 +42,15 @@ namespace DSAConcepts.Lists
         
         public int CompareTo(SortedList<T> other)
         {
-            var existing = (int.Parse(this.value.ToString()));
-            var incoming = (int.Parse(other.value.ToString()));
+            var existing = int.Parse(value.ToString());
+            var incoming = int.Parse(other.value.ToString());
 
             if (existing == incoming)
                 return 0;
             else if(existing < incoming)
                 return -1;
-            else return 1;
+            else 
+                return 1;
         }
 
         void Add(T value) 
