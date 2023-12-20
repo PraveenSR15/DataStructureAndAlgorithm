@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Hash\" />
-    <Folder Include="StackAndQueue\" />
     <Folder Include="String\" />
     <Folder Include="Trees\" />
   </ItemGroup>

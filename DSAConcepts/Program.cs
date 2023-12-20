@@ -1,5 +1,6 @@
 ﻿using DSAConcepts.Lists;
-using System.Collections;
+using DSAConcepts.StackAndQueue;
+
 public class Program
 {
     public static void Main(string[] args)
@@ -10,6 +11,10 @@ public class Program
         DoublyLinkedList<int>.ProcessDoublyLinkedList();
         Console.WriteLine("Sorted List");
         SortedList<int>.ProcessSortedList();
+        Console.WriteLine("Queue");
+        DSAConcepts.StackAndQueue.Queue<int>.ProcessQueue();
+        Console.WriteLine("Stack");
+        DSAConcepts.StackAndQueue.Stack<int>.ProcessStack();
     }
     
     

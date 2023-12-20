@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DSAConcepts.Lists
 {
-    public class DoublyLinkedList<T>
+    public class DoublyLinkedList<T> : IEnumerable<T>
     {
         DoublyLinkedList<T> previous;
         T value;
@@ -73,19 +74,86 @@ namespace DSAConcepts.Lists
             }
         }
 
-        void AddHead(T n)
+        public bool GetHead(out T value)
         {
-            head.previous = new DoublyLinkedList<T>(n, null , head);
-            head = head.previous;
+            if(head != null)
+            {
+                value = head.value;
+                return true;
+            }
+
+            value = default;
+            return false;
         }
 
-        void AddTail(T n)
+        public bool GetTail(out T value)
         {
-            tail.next = new DoublyLinkedList<T>(n, tail, null);
-            tail = tail.next;
+            if (head != null)
+            {
+                value = head.value;
+                return true;
+            }
+
+            value = default;
+            return false;
         }
 
-        DoublyLinkedList<T> Find(T node)
+        public void RemoveHead()
+        {
+            if(head != null )
+            {
+                head = head.next;
+                head.previous = null;
+            }
+        }
+        public void RemoveTail()
+        {
+            if (tail != null)
+            {
+                tail = tail.previous;
+                tail.next = null;
+            }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            DoublyLinkedList<T> current = head;
+            while (current != null)
+            {
+                yield return current.value;
+                current = current.next;
+            }
+        }
+
+        public void AddHead(T n)
+        {
+            if(head == null)
+            {
+                head = new DoublyLinkedList<T>(n, null, head);
+                tail = head;
+            }
+            else
+            {
+                head.previous = new DoublyLinkedList<T>(n, null, head);
+                head = head.previous;
+            }
+        }
+
+        public void AddTail(T n)
+        {
+            if(tail == null && head == null)
+            {
+                tail = new DoublyLinkedList<T>(n, null, head);
+                head = tail;
+            }
+            else
+            {
+                tail.next = new DoublyLinkedList<T>(n, tail, null);
+                tail = tail.next;
+            }
+        }
+
+        public DoublyLinkedList<T> Find(T node)
         {
             var current = head;
             while(current != null) 
@@ -97,7 +165,12 @@ namespace DSAConcepts.Lists
             return null;
         }
 
-        bool Remove(T node) 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public bool Remove(T node) 
         {
             var found = Find(node);
             if(found == null) return false;
