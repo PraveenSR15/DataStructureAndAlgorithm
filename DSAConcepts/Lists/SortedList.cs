@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DSAConcepts.Lists
 {
-    public class SortedList<T> : IComparable<SortedList<T>>, IEnumerable<T>
+    public class SortedList<T> : IComparable<T>, IEnumerable<T> where T : IComparable
     {
         public SortedList<T> head;
         public SortedList<T> tail;
@@ -40,17 +40,18 @@ namespace DSAConcepts.Lists
         }
 
         
-        public int CompareTo(SortedList<T> other)
+        public int CompareTo(T other)
         {
-            var existing = int.Parse(value.ToString());
-            var incoming = int.Parse(other.value.ToString());
+            return value.CompareTo(other);
+            //var existing = int.Parse(value.ToString());
+            //var incoming = int.Parse(other.value.ToString());
 
-            if (existing == incoming)
-                return 0;
-            else if(existing < incoming)
-                return -1;
-            else 
-                return 1;
+            //if (existing == incoming)
+            //    return 0;
+            //else if(existing < incoming)
+            //    return -1;
+            //else 
+            //    return 1;
         }
 
         void Add(T value) 
@@ -60,14 +61,14 @@ namespace DSAConcepts.Lists
                 head = new SortedList<T>(value);
                 tail = head;
             }
-            else if(head.CompareTo(new SortedList<T>(value)) >= 0)
+            else if(head.CompareTo(value) >= 0)
             {
                 SortedList<T> newHead = new SortedList<T>(value);
                 newHead.next = head;
                 head.previous = newHead;
                 head = newHead;
             }
-            else if(tail.CompareTo(new SortedList<T>(value)) < 0)
+            else if(tail.CompareTo(value) < 0)
             {
                 SortedList<T> newTail = new SortedList<T>(value);
                 newTail.previous = tail;
@@ -77,7 +78,7 @@ namespace DSAConcepts.Lists
             else
             {
                 SortedList<T> insertBefore = head;
-                while(insertBefore.CompareTo(new SortedList<T>(value)) < 0) 
+                while(insertBefore.CompareTo(value) < 0) 
                 {
                     insertBefore = insertBefore.next;
                 }

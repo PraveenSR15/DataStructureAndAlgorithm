@@ -1,12 +1,16 @@
 ﻿using AddTwoNumbersRecursion;
 using LeetCode.IndexOfString_String_Loop;
+using LeetCode.IntToRoman_HashTable_Loop;
 using LeetCode.LengthOfLastWord_String_Array;
+using LeetCode.LetterCombinationsPhoneNumber_HashTable_Loop;
 using LeetCode.LongestPalindrome_String_Loop;
 using LeetCode.LongestSubstring_STring_Loop;
 using LeetCode.Median_Array;
+using LeetCode.MergeArray_Array_Tree;
 using LeetCode.Palindrome_Integer_Condition;
 using LeetCode.RemoveDuplicates_Array_Loop;
 using LeetCode.RemoveElement_Array_loop;
+using LeetCode.RomanToInt_HashTable_Loop;
 using LeetCode.Stairs_Integer_Fibonacci;
 using LeetCode.TwoSum_Array_Loop;
 using MultiplyStrings;
@@ -19,7 +23,9 @@ class program
 
         do
         {
-            Console.WriteLine("Choose the problem: \n 1. AddTwoNumbers \n 2.MultiplyTwoStrings \n 3.RemoveDuplicateNumbers \n 4.TwoSum \n 5.IndexOfString \n 6.Stairs \n 7.Palindrome \n 8.Median \n 9.LongestSubstring \n 10.LengthOfLastWord \n 11.Remove Element \n 12.Longest Palindrome");
+            Console.WriteLine($"Choose the problem: \n 1. AddTwoNumbers \n 2.MultiplyTwoStrings \n 3.RemoveDuplicateNumbers \n " +
+                $"4.TwoSum \n 5.IndexOfString \n 6.Stairs \n 7.Palindrome \n 8.Median \n 9.LongestSubstring \n 10.LengthOfLastWord \n " +
+                $"11.Remove Element \n 12.Longest Palindrome \n 13.Integer To Roman \n 14.Roman To Integer \n 15. Letter Combination \n 16.Merge Sorted Arrays");
             int choice = int.Parse(Console.ReadLine());
 
             switch (choice)
@@ -78,7 +84,23 @@ class program
                     break;
                 case 12:
                     LongestPalindromeString longest = new LongestPalindromeString();
-                    longest.LongestPalindrome("aacabdkacaa");
+                    longest.LongestPalindrome("aba");
+                    break;
+                case 13:
+                    IntegerToRoman integerToRoman = new IntegerToRoman();
+                    Console.WriteLine(integerToRoman.IntToRoman(1994));
+                    break;
+                case 14:
+                    RomanToInteger romanToInteger = new RomanToInteger();
+                    Console.WriteLine(romanToInteger.RomanToInt("III"));
+                    break;
+                case 15:
+                    LetterCombination letterCombination = new LetterCombination();
+                    letterCombination.LetterCombinations("23");
+                    break;
+                case 16:
+                    MergeSortedArrays merge = new MergeSortedArrays();
+                    merge.Merge(new int[] { -1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0 }, 5, new int[] { -1, -1, 0, 0, 1, 2 }, 6);
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");

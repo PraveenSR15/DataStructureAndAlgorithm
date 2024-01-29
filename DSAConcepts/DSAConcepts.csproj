@@ -10,6 +10,5 @@
   <ItemGroup>
     <Folder Include="Hash\" />
     <Folder Include="String\" />
-    <Folder Include="Trees\" />
   </ItemGroup>
 </Project>

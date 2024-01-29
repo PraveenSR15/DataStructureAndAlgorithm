@@ -16,6 +16,4 @@ public class Program
         Console.WriteLine("Stack");
         DSAConcepts.StackAndQueue.Stack<int>.ProcessStack();
     }
-    
-    
 }
